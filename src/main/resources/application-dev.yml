@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/Kroger_Intern_Directory
+    username: jonathansoriano
+    password: ""
+
+  sql:
+    init:
+      mode: never # set to 'always' if you're using schema/data files in dev
+
