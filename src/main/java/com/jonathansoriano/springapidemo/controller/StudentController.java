@@ -1,7 +1,7 @@
 package com.jonathansoriano.springapidemo.controller;
 
 import com.jonathansoriano.springapidemo.model.Student;
-import com.jonathansoriano.springapidemo.request.StudentRequest;
+import com.jonathansoriano.springapidemo.domain.StudentRequest;
 import com.jonathansoriano.springapidemo.service.StudentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

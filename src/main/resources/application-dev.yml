@@ -2,7 +2,7 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/Kroger_Intern_Directory
-    username: jonathansoriano
+    username: jonathansoriano #- when I installed PostgreSQL, it used my computer username so this is what I ended up using for PostgreSQL
     password: ""
 
   sql:

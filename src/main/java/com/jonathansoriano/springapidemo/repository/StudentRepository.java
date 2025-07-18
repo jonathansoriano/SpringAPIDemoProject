@@ -1,7 +1,7 @@
 package com.jonathansoriano.springapidemo.repository;
 
 import com.jonathansoriano.springapidemo.dto.StudentDto;
-import com.jonathansoriano.springapidemo.request.StudentRequest;
+import com.jonathansoriano.springapidemo.domain.StudentRequest;
 import com.jonathansoriano.springapidemo.utils.SqlUtils;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;

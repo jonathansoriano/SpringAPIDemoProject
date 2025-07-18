@@ -5,11 +5,9 @@ import com.jonathansoriano.springapidemo.exception.CreationFailure;
 import com.jonathansoriano.springapidemo.exception.SearchNotFound;
 import com.jonathansoriano.springapidemo.model.Student;
 import com.jonathansoriano.springapidemo.repository.StudentRepository;
-import com.jonathansoriano.springapidemo.request.StudentRequest;
+import com.jonathansoriano.springapidemo.domain.StudentRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
-import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import java.util.ArrayList;
 import java.util.List;

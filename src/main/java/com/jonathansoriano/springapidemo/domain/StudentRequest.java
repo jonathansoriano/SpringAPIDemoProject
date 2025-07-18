@@ -1,4 +1,4 @@
-package com.jonathansoriano.springapidemo.request;
+package com.jonathansoriano.springapidemo.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
