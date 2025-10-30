@@ -66,6 +66,8 @@ public class StudentRepository {
 
         System.out.println("Params: " + params.getValues());
 
-        return jdbcTemplate.update(SQL_INSERT_NEW_STUDENT, params);
+        return jdbcTemplate.update(SQL_INSERT_NEW_STUDENT, params); //update() returns an "int" to indicate how many rows
+                                                                    // Were affected by the SQL Operation. If int > 0,
+                                                                    // Then operation was successful; else no rows were inserted/updated...
     }
 }
