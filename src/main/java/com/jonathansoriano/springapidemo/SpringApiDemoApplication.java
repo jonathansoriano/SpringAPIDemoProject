@@ -22,8 +22,8 @@ public class SpringApiDemoApplication implements CommandLineRunner {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/students/**")  // applies to all endpoints under /students
-                        .allowedOrigins("http://localhost:5500") // your frontend
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // optional but recommended
+                        .allowedOrigins("http://localhost:5500", "http://127.0.0.1:5500") // your frontend
+                        .allowedMethods("GET", "POST","DELETE") // optional but recommended
                         .allowedHeaders("*") // allow all headers (you can restrict if you want)
                         .allowCredentials(true); // optional: if you send cookies/auth
             }
