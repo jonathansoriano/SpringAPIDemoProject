@@ -36,14 +36,14 @@ INSERT INTO student (first_name, last_name, dob, resident_city, resident_state, 
 ('Michael', 'Jones', '2002-08-27', 'Cincinnati', 'OH', 3, 'Sophomore'),
 ('Mike', 'Hall', '2001-12-12', 'Cincinnati', 'OH', 3, 'Sophomore'),
 ('Nina', 'Allen', '2002-07-17', 'Toledo', 'OH', 3, 'Junior'),
-('Jonathan', 'Soriano', '2000-09-08', 'Dayton', 'OH', 3, 'Senior'),
+('Jonathan', 'Soriano', '2000-05-11', 'Cincinnati', 'OH', 3, 'Senior'),
 
 -- NYU (ID: 4)
 ('Paula', 'Lopez', '2002-01-23', 'New York', 'NY', 4, 'Freshman'),
 ('Quinn', 'Scott', '2001-05-06', 'Buffalo', 'NY', 4, 'Sophomore'),
 ('Rachel', 'Adams', '2003-03-18', 'Rochester', 'NY', 4, 'Junior'),
 ('Steve', 'Perez', '2000-11-29', 'Albany', 'NY', 4, 'Junior'),
-('Tina', 'Morris', '2002-12-01', 'Yonkers', 'NY', 4, 'Senior'),
+('Tina', 'Morris', '2000-05-11', 'Yonkers', 'NY', 4, 'Senior'),
 
 -- UT Austin (ID: 5)
 ('Jonathan', 'King', '2001-06-03', 'Austin', 'TX', 5, 'Freshman'),
@@ -55,7 +55,7 @@ INSERT INTO student (first_name, last_name, dob, resident_city, resident_state, 
 ('Zara', 'Anderson', '2004-02-01', 'Ann Arbor', 'MI', 6, 'Freshman'),
 ('Liam', 'Bennett', '2003-05-22', 'Detroit', 'MI', 6, 'Sophomore'),
 ('Olivia', 'Carter', '2002-07-19', 'Lansing', 'MI', 6, 'Junior'),
-('Noah', 'Diaz', '2001-09-04', 'Flint', 'MI', 6, 'Senior'),
+('Noah', 'Diaz', '2000-05-11', 'Flint', 'MI', 6, 'Senior'),
 
 ('Emma', 'Foster', '2004-03-10', 'Palo Alto', 'CA', 7, 'Freshman'),
 ('Mason', 'Garcia', '2003-08-11', 'San Jose', 'CA', 7, 'Sophomore'),
@@ -75,7 +75,7 @@ INSERT INTO student (first_name, last_name, dob, resident_city, resident_state, 
 ('Amelia', 'Reed', '2004-06-15', 'Tampa', 'FL', 10, 'Freshman'),
 ('Elijah', 'Soriano', '2003-03-08', 'Orlando', 'FL', 10, 'Sophomore'),
 ('Harper', 'Young', '2002-11-06', 'Miami', 'FL', 10, 'Junior'),
-('Alexander', 'Smith', '2001-01-19', 'Jacksonville', 'FL', 10, 'Senior'),
+('Pedro', 'Smith', '2001-01-19', 'Jacksonville', 'FL', 10, 'Senior'),
 
 ('Evelyn', 'Vasquez', '2004-04-02', 'Champaign', 'IL', 11, 'Freshman'),
 ('Logan', 'White', '2003-07-13', 'Springfield', 'IL', 11, 'Sophomore'),
@@ -95,7 +95,7 @@ INSERT INTO student (first_name, last_name, dob, resident_city, resident_state, 
 ('Grace', 'Harvey', '2004-09-25', 'West Lafayette', 'IN', 14, 'Freshman'),
 ('Jayden', 'Ingram', '2003-01-31', 'Indianapolis', 'IN', 14, 'Sophomore'),
 ('Victoria', 'Jackson', '2002-10-22', 'Fort Wayne', 'IN', 14, 'Junior'),
-('Wyatt', 'Kennedy', '2001-04-17', 'Gary', 'IN', 14, 'Senior');
+('Elijah', 'Kennedy', '2001-04-17', 'Gary', 'IN', 14, 'Senior');
 
 
 
