@@ -3,6 +3,7 @@ package com.jonathansoriano.springapidemo.repository;
 import com.jonathansoriano.springapidemo.dto.StudentDto;
 import com.jonathansoriano.springapidemo.domain.StudentRequest;
 import com.jonathansoriano.springapidemo.utils.SqlUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -15,8 +16,8 @@ public class StudentRepository {
     private final NamedParameterJdbcTemplate jdbcTemplate;
     private final String SELECT = "SELECT * FROM student WHERE 1=1";
     private final String AND_ID = "AND id = :id";
-    private final String AND_FIRST_NAME = "AND first_name = :firstName";
-    private final String AND_LAST_NAME = "AND last_name = :lastName";
+    private final String AND_FIRST_NAME = "AND LOWER(first_name) LIKE :firstName";
+    private final String AND_LAST_NAME = "AND LOWER(last_name) LIKE :lastName";
     private final String AND_DOB = "AND dob = :dob";
     private final String AND_RESIDENT_CITY = "AND resident_city = :residentCity";
     private final String AND_RESIDENT_STATE = "AND resident_state = :residentState";
@@ -32,8 +33,8 @@ public class StudentRepository {
     public List<StudentDto> find (StudentRequest request){
         MapSqlParameterSource params = new MapSqlParameterSource()
                 .addValue("id", request.getId())
-                .addValue("firstName", request.getFirstName())
-                .addValue("lastName", request.getLastName())
+                .addValue("firstName", "%" + StringUtils.lowerCase(request.getFirstName()) + "%")
+                .addValue("lastName", "%" + StringUtils.lowerCase(request.getLastName()) + "%")
                 .addValue("dob", request.getDob())
                 .addValue("residentCity", request.getResidentCity())
                 .addValue("residentState", request.getResidentState())
