@@ -7,12 +7,8 @@ import com.jonathansoriano.springapidemo.model.Student;
 import com.jonathansoriano.springapidemo.repository.StudentRepository;
 import com.jonathansoriano.springapidemo.domain.StudentRequest;
 import com.jonathansoriano.springapidemo.utils.InputValidationUtils;
-import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
-import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.dao.DataAccessException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,11 +17,10 @@ import java.util.List;
 public class StudentService {
 
     private final StudentRepository repository;
-    private final NamedParameterJdbcTemplate jdbcTemplate;
 
-    public StudentService(StudentRepository repository,  NamedParameterJdbcTemplate jdbcTemplate) {
+
+    public StudentService(StudentRepository repository) {
         this.repository = repository;
-        this.jdbcTemplate = jdbcTemplate;
     }
 
     public List<Student> find (StudentRequest request)
