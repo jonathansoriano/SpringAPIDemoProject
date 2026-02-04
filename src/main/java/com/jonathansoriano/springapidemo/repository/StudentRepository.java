@@ -2,8 +2,11 @@ package com.jonathansoriano.springapidemo.repository;
 
 import com.jonathansoriano.springapidemo.dto.StudentDto;
 import com.jonathansoriano.springapidemo.domain.StudentRequest;
+import com.jonathansoriano.springapidemo.exception.CreationFailure;
 import com.jonathansoriano.springapidemo.utils.SqlUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.dao.DataAccessException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -25,6 +28,8 @@ public class StudentRepository {
     private final String AND_GRADE = "AND grade = :grade";
 
     private final String SQL_INSERT_NEW_STUDENT = "INSERT INTO student (first_name,last_name,dob, resident_city, resident_state, university_id, grade) VALUES (:firstName, :lastName, :dob, :residentCity, :residentState, :universityId, :grade);";
+
+    private final String SQL_CHECK_UNIVERSITY_EXISTENCE = "SELECT COUNT(*) FROM university WHERE 1=1 AND id = :id";
 
     public StudentRepository(NamedParameterJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -70,5 +75,28 @@ public class StudentRepository {
         return jdbcTemplate.update(SQL_INSERT_NEW_STUDENT, params); //update() returns an "int" to indicate how many rows
                                                                     // Were affected by the SQL Operation. If int > 0,
                                                                     // Then operation was successful; else no rows were inserted/updated...
+    }
+    public boolean universityExists(Long universityId)
+    {
+        try {
+            //String sql = "SELECT COUNT(*) FROM university WHERE id = :id";
+
+            MapSqlParameterSource params = new MapSqlParameterSource()
+                    .addValue("id", universityId);
+
+        /*
+        QueryForObject()
+        It is used to execute a SQL query that returns exactly one row and
+        map a single column of that row to a Java object of the specified type
+         */
+            Integer count = jdbcTemplate.queryForObject(SQL_CHECK_UNIVERSITY_EXISTENCE, params, Integer.class); //NamedJDBCTemplate can throw exceptions... like EmptyResultDataAccessException if there are no rows. IncorrectResultSizeDataAccessException is thrown if many rows are found.
+
+            return count != null && count > 0; //Checks if value in the DB is NOT null or if the university or many instances of the university exists in the DB
+        } catch (EmptyResultDataAccessException e) { //This exception is thrown if no rows are found
+            return false;
+        } catch (DataAccessException e) { //This is thrown for any other database issues.
+            // Log the database access error
+            throw new CreationFailure("Unable to verify university existence due to database error");
+        }
     }
 }
