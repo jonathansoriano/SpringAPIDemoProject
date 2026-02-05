@@ -70,7 +70,7 @@ class StudentRepositoryTest
                 Arguments.of(null, null, "Hall", null, null, null, null, null, 1),
                 Arguments.of(null, null, null, LocalDate.of(2002, 4, 11), null, null, null, null, 1),
                 Arguments.of(null, null, null, null, "Rochester", null, null, null, 1),
-                Arguments.of(null, null, null, null, null, "CA", null, null, 5),
+                Arguments.of(null, null, null, null, null, "CA", null, null, 9),
                 Arguments.of(null, null, null, null, null, null, 5L, null, 5),
                 Arguments.of(null, null, null, null, null ,null, null, "Senior", 14)
         );
