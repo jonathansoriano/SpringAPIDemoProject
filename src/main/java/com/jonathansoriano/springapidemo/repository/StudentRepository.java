@@ -22,7 +22,7 @@ public class StudentRepository {
     private final String AND_FIRST_NAME = "AND LOWER(first_name) LIKE :firstName";
     private final String AND_LAST_NAME = "AND LOWER(last_name) LIKE :lastName";
     private final String AND_DOB = "AND dob = :dob";
-    private final String AND_RESIDENT_CITY = "AND resident_city = :residentCity";
+    private final String AND_RESIDENT_CITY = "AND LOWER(resident_city) LIKE :residentCity";
     private final String AND_RESIDENT_STATE = "AND resident_state = :residentState";
     private final String AND_UNIVERSITY_ID = "AND university_id = :universityId";
     private final String AND_GRADE = "AND grade = :grade";
@@ -41,7 +41,7 @@ public class StudentRepository {
                 .addValue("firstName", "%" + StringUtils.lowerCase(request.getFirstName()) + "%")
                 .addValue("lastName", "%" + StringUtils.lowerCase(request.getLastName()) + "%")
                 .addValue("dob", request.getDob())
-                .addValue("residentCity", request.getResidentCity())
+                .addValue("residentCity", "%" + StringUtils.lowerCase(request.getResidentCity()) + "%")
                 .addValue("residentState", request.getResidentState())
                 .addValue("universityId", request.getUniversityId())
                 .addValue("grade", request.getGrade());
